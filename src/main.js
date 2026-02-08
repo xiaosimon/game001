@@ -1,23 +1,12 @@
 import { WelcomeScene } from './scenes/WelcomeScene.js';
 import { MainScene } from './scenes/MainScene.js';
-const config = {
-    type: Phaser.AUTO,
-    title: 'Overlord Rising',
-    description: '',
-    parent: 'game-container',
-    width: 1280,
-    height: 720,
-    backgroundColor: '#000000',
-    pixelArt: false,
-    scene: [
-        WelcomeScene,
-        MainScene
-    ],
-    scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH
-    },
-}
+import { gameConfig } from './config.js';
 
-new Phaser.Game(config);
+// 添加场景到配置
+gameConfig.scene = [
+    WelcomeScene,
+    MainScene
+];
+
+new Phaser.Game(gameConfig);
             
